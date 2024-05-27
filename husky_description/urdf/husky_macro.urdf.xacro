@@ -14,7 +14,8 @@
   <xacro:property name="husky_rear_bumper_extend" value="$(optenv HUSKY_REAR_BUMPER_EXTEND 0)" />
 
   <xacro:arg name="robot_namespace" default="/" />
-  <xacro:arg name="is_sim" default="false" />
+  <xacro:arg name="is_sim" default="true" />
+  <xacro:arg name="is_gazebo" default="false" />
   <xacro:arg name="urdf_extras" default="$(optenv CPR_URDF_EXTRAS empty.urdf)" />
 
   <!-- Included URDF/XACRO Files -->
@@ -163,8 +164,11 @@
 
     <ros2_control name="${prefix}husky_hardware" type="system">
       <hardware>
-        <xacro:if value="$(arg is_sim)">
+        <xacro:if value="$(arg is_gazebo)">
           <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </xacro:if>
+        <xacro:if value="$(arg is_sim)">
+          <plugin>fake_components/GenericSystem</plugin>
         </xacro:if>
         <xacro:unless value="$(arg is_sim)">
           <plugin>husky_base/HuskyHardware</plugin>

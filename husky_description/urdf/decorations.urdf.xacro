@@ -27,7 +27,7 @@
 
     <!-- Attach chassis to the robot -->
     <joint name="top_chassis_joint" type="fixed">
-      <parent link="base_link" />
+      <parent link="${prefix}base_link" />
       <child link="top_chassis_link" />
     </joint>
 
@@ -44,7 +44,7 @@
       <!-- Attach user rails to base link -->
       <joint name="user_rail" type="fixed">
         <origin xyz="0.272 0 0.245" rpy="0 0 0" />
-        <parent link="base_link" />
+        <parent link="${prefix}base_link" />
         <child link="user_rail_link" />
       </joint>
     </xacro:if>
@@ -61,7 +61,7 @@
     <!-- Attach front bumper -->
     <joint name="front_bumper" type="fixed">
       <origin xyz="${0.48 + husky_front_bumper_extend} 0 0.091" rpy="0 0 0" />
-      <parent link="base_link" />
+      <parent link="${prefix}base_link" />
       <child link="front_bumper_link" />
     </joint>
 
@@ -76,7 +76,7 @@
 
       <joint name="front_bumper_extension" type="fixed">
         <origin xyz="${0.48 + husky_front_bumper_extend} 0 0.091" rpy="0 0 0" />
-        <parent link="base_link" />
+        <parent link="${prefix}base_link" />
         <child link="front_bumper_extension_link" />
       </joint>
     </xacro:if>
@@ -93,7 +93,7 @@
     <!-- Attach rear bumper -->
     <joint name="rear_bumper" type="fixed">
       <origin xyz="${-0.48 - husky_rear_bumper_extend} 0 0.091" rpy="0 0 ${M_PI}" />
-      <parent link="base_link" />
+      <parent link="${prefix}base_link" />
       <child link="rear_bumper_link" />
     </joint>
 
@@ -108,7 +108,7 @@
 
       <joint name="rear_bumper_extension" type="fixed">
         <origin xyz="${-0.48 - husky_rear_bumper_extend} 0 0.091" rpy="0 0 ${M_PI}" />
-        <parent link="base_link" />
+        <parent link="${prefix}base_link" />
         <child link="rear_bumper_extension_link" />
       </joint>
     </xacro:if>
@@ -132,7 +132,7 @@
         </link>
         <!-- Attach top plate -->
         <joint name="top_plate_joint" type="fixed">
-          <parent link="base_link" />
+          <parent link="${prefix}base_link" />
           <child link="top_plate_link"/>
           <origin xyz="0.0812 0 0.225" rpy="0 0 0"/>
         </joint>
@@ -167,7 +167,7 @@
         </link>
         <!-- Attach top plate -->
         <joint name="top_plate_joint" type="fixed">
-          <parent link="base_link" />
+          <parent link="${prefix}base_link" />
           <child link="top_plate_link"/>
           <origin xyz="0.0812 0 0.245" rpy="0 0 0"/>
         </joint>
