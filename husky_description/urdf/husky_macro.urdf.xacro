@@ -110,20 +110,20 @@
 
 
     <!-- Husky wheel macros -->
-    <xacro:husky_wheel wheel_prefix="${prefix}front_left">
+    <xacro:husky_wheel prefix="${prefix}" wheel_prefix="${prefix}front_left">
       <origin xyz="${wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
     </xacro:husky_wheel>
-    <xacro:husky_wheel wheel_prefix="${prefix}front_right">
+    <xacro:husky_wheel prefix="${prefix}" wheel_prefix="${prefix}front_right">
       <origin xyz="${wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
     </xacro:husky_wheel>
-    <xacro:husky_wheel wheel_prefix="${prefix}rear_left">
+    <xacro:husky_wheel prefix="${prefix}" wheel_prefix="${prefix}rear_left">
       <origin xyz="${-wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
     </xacro:husky_wheel>
-    <xacro:husky_wheel wheel_prefix="${prefix}rear_right">
+    <xacro:husky_wheel prefix="${prefix}" wheel_prefix="${prefix}rear_right">
       <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
     </xacro:husky_wheel>
 
-    <xacro:husky_decorate />
+    <xacro:husky_decorate prefix="${prefix}" />
 
     <!-- <xacro:if value="$(arg laser_enabled)">
 

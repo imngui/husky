@@ -10,7 +10,7 @@
   <material name="white"><color rgba="1.0 1.0 1.0 1.0" /></material>
   <material name="red"><color rgba="1.0 0.0 0.0 1.0" /></material>
 
-  <xacro:macro name="husky_decorate">
+  <xacro:macro name="husky_decorate" params="prefix">
 
     <xacro:property name="husky_front_bumper_extend" value="$(optenv HUSKY_FRONT_BUMPER_EXTEND 0)" />
     <xacro:property name="husky_rear_bumper_extend" value="$(optenv HUSKY_REAR_BUMPER_EXTEND 0)" />
